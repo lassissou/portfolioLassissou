@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Réalisations | Développeur Full Stack & Mobile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/projets1.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  
+</head>
+<body>
+  <!-- 🟠 Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Lassissou Zakari<span></span></a>
+      <nav class="nav-container">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="index.html#skills" class="nav-link">Expertise</a></li>
+          <li><a href="projets.html" class="nav-link active">Réalisations</a></li>
+          <li><a href="blog.html" class="nav-link">Articles</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="cta-buttons">
+          <button id="dark-mode-toggle" class="btn-icon" aria-label="Mode sombre">
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="dropdown">
+            <button class="btn-download">
+              CV <i class="fas fa-download"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#" download="CV_Dev_FullStack.pdf">PDF Français</a>
+              <a href="#" download="CV_Dev_FullStack_EN.pdf">PDF English</a>
+              <a href="#" download="CV_Dev_FullStack.docx">Word Version</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🟡 Main Projects Content -->
+  <main class="projects-page">
+    <section class="page-header">
+      <div class="container">
+        <div class="page-header-content">
+          <h1 class="animate__animated animate__fadeInDown">Mes <span>Réalisations</span></h1>
+          <p class="animate__animated animate__fadeInUp">Découvrez une sélection de mes projets les plus marquants</p>
+          <div class="breadcrumb animate__animated animate__fadeInUp">
+            <a href="index.html">Accueil</a> / <span>Réalisations</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-showcase">
+      <div class="container">
+        <div class="projects-filter">
+          <button class="filter-btn active" data-filter="all">Tous</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="design">Design</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Projet 1 -->
+          <div class="project-card" data-category="web fullstack">
+            <div class="project-image">
+              <img src="./images/ima2.avif" alt="Application de gestion" loading="lazy">
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="Voir le projet"><i class="fas fa-eye"></i></a>
+                <a href="#" class="project-link" aria-label="Code source"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Application de Gestion SaaS</h3>
+              <p>Plateforme complète de gestion d'entreprise avec tableau de bord analytique</p>
+              <div class="project-tags">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 2 -->
+          <div class="project-card" data-category="mobile">
+            <div class="project-image">
+              <img src="./images/ima2.avif" alt="Application mobile" loading="lazy">
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="Voir le projet"><i class="fas fa-eye"></i></a>
+                <a href="#" class="project-link" aria-label="Code source"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Application Fitness Mobile</h3>
+              <p>Suivi d'activité sportive avec intégration d'objets connectés</p>
+              <div class="project-tags">
+                <span>Flutter</span>
+                <span>Firebase</span>
+                <span>BLoC</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 3 -->
+          <div class="project-card" data-category="web design">
+            <div class="project-image">
+              <img src="./images/pd6.jpg" alt="Site e-commerce" loading="lazy">
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="Voir le projet"><i class="fas fa-eye"></i></a>
+                <a href="#" class="project-link" aria-label="Code source"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Plateforme E-commerce</h3>
+              <p>Boutique en ligne avec système de paiement sécurisé</p>
+              <div class="project-tags">
+                <span>Vue.js</span>
+                <span>Laravel</span>
+                <span>Stripe</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 4 -->
+          <div class="project-card" data-category="fullstack">
+            <div class="project-image">
+              <img src="./images/pd6.jpg" alt="API RESTful" loading="lazy">
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="Voir le projet"><i class="fas fa-eye"></i></a>
+                <a href="#" class="project-link" aria-label="Code source"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>API RESTful Évolutive</h3>
+              <p>Architecture microservices avec gestion des autorisations</p>
+              <div class="project-tags">
+                <span>NestJS</span>
+                <span>PostgreSQL</span>
+                <span>Docker</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 5 -->
+          <div class="project-card" data-category="mobile">
+            <div class="project-image">
+              <img src="./images/pd4.avif" alt="Jeu mobile" loading="lazy">
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="Voir le projet"><i class="fas fa-eye"></i></a>
+                <a href="#" class="project-link" aria-label="Code source"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Jeu Mobile Éducatif</h3>
+              <p>Application gamifiée pour l'apprentissage des enfants</p>
+              <div class="project-tags">
+                <span>Unity</span>
+                <span>C#</span>
+                <span>Firebase</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 6 -->
+          <div class="project-card" data-category="web design">
+            <div class="project-image">
+              <img src="./images/pd6.jpg" alt="Portfolio artistique" loading="lazy">
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="Voir le projet"><i class="fas fa-eye"></i></a>
+                <a href="#" class="project-link" aria-label="Code source"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Portfolio Artistique</h3>
+              <p>Galerie interactive avec gestion de contenu</p>
+              <div class="project-tags">
+                <span>GSAP</span>
+                <span>Three.js</span>
+                <span>WordPress</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pagination">
+          <button class="pagination-btn active">1</button>
+          <button class="pagination-btn">2</button>
+          <button class="pagination-btn">3</button>
+          <button class="pagination-btn next">Suivant <i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Vous avez un projet en tête ?</h2>
+          <p>Discutons de la meilleure façon de le réaliser ensemble</p>
+          <a href="index.html#contact" class="btn btn-primary btn-animate">
+            <span>Contactez-moi</span>
+            <i class="fas fa-paper-plane"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ⚫ Footer -->
+  <footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="logo">Lassissou Zakari<span></span></div>
+            <p>Création de solutions digitales sur mesure pour propulser votre business.</p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+  
+  
+         
+          <div class="navigation-service">
+         
+          <div class="footer-col">
+            <h3>Navigation</h3>
+            <ul>
+              <li><a href="#home">Accueil</a></li>
+              <li><a href="#skills">Expertise</a></li>
+              <li><a href="projets.html">Réalisations</a></li>
+              <li><a href="blog.html">Articles</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Développement Web</a></li>
+              <li><a href="#">Applications Mobile</a></li>
+              <li><a href="#">UX/UI Design</a></li>
+              <li><a href="#">Consulting</a></li>
+              <li><a href="#">Formation</a></li>
+            </ul>
+          </div>
+        </div>
+  
+          <div class="footer-col">
+            <h3>Newsletter</h3>
+            <p>Abonnez-vous pour recevoir mes dernières actualités.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Votre email" required>
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i>.
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Lassissou Zakari. Tous droits réservés.</p>
+          <div class="legal-links">
+            <a href="#">Mentions légales</a>
+            <a href="#">Politique de confidentialité</a>
+            <a href="#">Conditions d'utilisation</a>
+          </div>
+        </div>
+      </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/projets1.js"></script>
+</body>
+</html>

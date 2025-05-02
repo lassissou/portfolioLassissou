@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimisation des performances frontend | Lassissou Zakari</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/article.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <!-- 🟠 Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Lassissou Zakari<span></span></a>
+      <nav class="nav-container">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="index.html#skills" class="nav-link">Expertise</a></li>
+          <li><a href="projets.html" class="nav-link">Réalisations</a></li>
+          <li><a href="a-propos.html" class="nav-link">À Propos</a></li>
+          <li><a href="blog.html" class="nav-link active">Articles</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="cta-buttons">
+          <button id="dark-mode-toggle" class="btn-icon" aria-label="Mode sombre">
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="dropdown">
+            <button class="btn-download">
+              CV <i class="fas fa-download"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#" download="CV_Dev_FullStack.pdf">PDF Français</a>
+              <a href="#" download="CV_Dev_FullStack_EN.pdf">PDF English</a>
+              <a href="#" download="CV_Dev_FullStack.docx">Word Version</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🟡 Main Article Content -->
+  <main class="article-page">
+    <section class="article-header">
+      <div class="container">
+        <div class="article-header-content">
+          <div class="article-meta">
+            <span class="article-category">Frontend</span>
+            <span class="article-date"><i class="far fa-calendar"></i> 15 Juin 2023</span>
+            <span class="article-reading-time"><i class="far fa-clock"></i> 8 min de lecture</span>
+          </div>
+          <h1 class="animate__animated animate__fadeInDown">Optimisation des performances frontend : techniques avancées</h1>
+          <div class="article-author">
+            <img src="./images/author.jpg" alt="Lassissou Zakari" class="author-avatar">
+            <div class="author-info">
+              <span class="author-name">Par Lassissou Zakari</span>
+              <span class="author-title">Développeur Full Stack</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-hero">
+      <div class="container">
+        <img src="./images/blog1-large.jpg" alt="Optimisation des performances frontend" class="hero-image" loading="lazy">
+      </div>
+    </section>
+
+    <section class="article-content">
+      <div class="container">
+        <div class="content-wrapper">
+          <article class="main-content">
+            <p class="article-intro">Dans le monde du développement web moderne, les performances frontend sont devenues un critère essentiel pour le succès d'une application. Dans cet article, je partage avec vous des techniques avancées que j'ai utilisées pour améliorer significativement les performances de diverses applications.</p>
+            
+            <h2>1. Le chargement différé des images (Lazy Loading)</h2>
+            <p>Le lazy loading est une technique qui consiste à ne charger les images que lorsqu'elles sont sur le point d'apparaître dans le viewport du navigateur. Voici comment l'implémenter efficacement :</p>
+            
+            <pre><code class="language-html">&lt;img src="placeholder.jpg" data-src="image-to-lazy-load.jpg" 
+     alt="Description" class="lazy" loading="lazy"&gt;
+
+&lt;script&gt;
+document.addEventListener("DOMContentLoaded", function() {
+  const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+  
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.classList.remove("lazy");
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
+    
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+  }
+});
+&lt;/script&gt;</code></pre>
+            
+            <p>Cette technique peut réduire le temps de chargement initial jusqu'à 40% sur les pages riches en images.</p>
+            
+            <h2>2. Optimisation des bundles JavaScript</h2>
+            <p>L'optimisation de vos fichiers JavaScript est cruciale :</p>
+            <ul>
+              <li>Utilisez le code splitting avec Webpack ou Rollup</li>
+              <li>Implémentez le lazy loading des routes avec React.lazy ou dynamic imports</li>
+              <li>Analysez votre bundle avec Webpack Bundle Analyzer</li>
+            </ul>
+            
+            <div class="article-image">
+              <img src="./images/bundle-optimization.jpg" alt="Optimisation des bundles" loading="lazy">
+              <span class="image-caption">Analyse d'un bundle avec Webpack Bundle Analyzer</span>
+            </div>
+            
+            <h2>3. Utilisation stratégique de Web Workers</h2>
+            <p>Les Web Workers permettent d'exécuter du JavaScript dans un thread séparé, évitant ainsi de bloquer le thread principal :</p>
+            
+            <pre><code class="language-javascript">// main.js
+const worker = new Worker('worker.js');
+
+worker.postMessage({ task: 'heavyCalculation', data: largeDataSet });
+
+worker.onmessage = function(e) {
+  console.log('Result from worker:', e.data);
+};
+
+// worker.js
+self.onmessage = function(e) {
+  if (e.data.task === 'heavyCalculation') {
+    const result = processData(e.data.data);
+    self.postMessage(result);
+  }
+};</code></pre>
+            
+            <h2>4. Optimisation des animations CSS</h2>
+            <p>Pour des animations fluides à 60fps :</p>
+            <table class="article-table">
+              <thead>
+                <tr>
+                  <th>Propriété</th>
+                  <th>Performance</th>
+                  <th>Alternative</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>width/height</td>
+                  <td>❌ Pauvre</td>
+                  <td>transform: scale()</td>
+                </tr>
+                <tr>
+                  <td>top/left</td>
+                  <td>❌ Pauvre</td>
+                  <td>transform: translate()</td>
+                </tr>
+                <tr>
+                  <td>opacity</td>
+                  <td>✅ Excellente</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <h2>5. Préchargement des ressources critiques</h2>
+            <p>Utilisez les resource hints pour charger les ressources critiques plus tôt :</p>
+            
+            <pre><code class="language-html">&lt;link rel="preload" href="critical.css" as="style"&gt;
+&lt;link rel="preload" href="critical.js" as="script"&gt;
+&lt;link rel="preconnect" href="https://api.example.com"&gt;
+&lt;link rel="dns-prefetch" href="https://cdn.example.com"&gt;</code></pre>
+            
+            <div class="article-conclusion">
+              <h3>Conclusion</h3>
+              <p>L'optimisation des performances frontend est un processus continu qui peut considérablement améliorer l'expérience utilisateur. En mettant en œuvre ces techniques avancées, j'ai réussi à réduire le temps de chargement de plusieurs applications de plus de 50%, ce qui s'est traduit par une augmentation du taux de conversion et une meilleure satisfaction des utilisateurs.</p>
+            </div>
+            
+            <div class="article-tags">
+              <span><i class="fas fa-tags"></i> Tags :</span>
+              <a href="#" class="tag">Performance</a>
+              <a href="#" class="tag">JavaScript</a>
+              <a href="#" class="tag">Optimisation</a>
+              <a href="#" class="tag">Frontend</a>
+            </div>
+          </article>
+          
+          <aside class="article-sidebar">
+            <div class="sidebar-widget">
+              <h3 class="widget-title">À propos de l'auteur</h3>
+              <div class="author-card">
+                <img src="./images/author.jpg" alt="Lassissou Zakari" class="author-image">
+                <h4>Lassissou Zakari</h4>
+                <p>Développeur Full Stack avec 5+ ans d'expérience dans la création d'applications web et mobiles performantes.</p>
+                <div class="author-social">
+                  <a href="#"><i class="fab fa-github"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="sidebar-widget">
+              <h3 class="widget-title">Articles récents</h3>
+              <div class="recent-posts">
+                <a href="#" class="recent-post">
+                  <img src="./images/blog2-thumb.jpg" alt="Architecture microservices">
+                  <div class="recent-post-content">
+                    <h4>Architecture microservices : bonnes pratiques</h4>
+                    <span>28 Mai 2023</span>
+                  </div>
+                </a>
+                <a href="#" class="recent-post">
+                  <img src="./images/blog3-thumb.jpg" alt="Flutter vs React Native">
+                  <div class="recent-post-content">
+                    <h4>Flutter vs React Native en 2023</h4>
+                    <span>10 Mai 2023</span>
+                  </div>
+                </a>
+                <a href="#" class="recent-post">
+                  <img src="./images/blog4-thumb.jpg" alt="Productivité développeur">
+                  <div class="recent-post-content">
+                    <h4>10 outils pour booster votre productivité</h4>
+                    <span>22 Avr 2023</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            
+            <div class="sidebar-widget">
+              <h3 class="widget-title">Catégories</h3>
+              <ul class="category-list">
+                <li><a href="#">Frontend <span>12</span></a></li>
+                <li><a href="#">Backend <span>8</span></a></li>
+                <li><a href="#">Mobile <span>5</span></a></li>
+                <li><a href="#">Conseils <span>7</span></a></li>
+                <li><a href="#">Tutoriels <span>10</span></a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+    
+    <section class="article-comments">
+      <div class="container">
+        <div class="comments-header">
+          <h2>Commentaires <span>(3)</span></h2>
+          <button class="btn btn-primary"><i class="fas fa-comment"></i> Ajouter un commentaire</button>
+        </div>
+        
+        <div class="comments-list">
+          <div class="comment">
+            <div class="comment-author">
+              <img src="./images/user1.jpg" alt="Jean Dupont" class="comment-avatar">
+              <div class="comment-author-info">
+                <h4>Jean Dupont</h4>
+                <span class="comment-date">2 jours ago</span>
+              </div>
+            </div>
+            <div class="comment-content">
+              <p>Excellent article ! J'ai particulièrement apprécié la section sur les Web Workers que je ne connaissais pas. Je vais certainement implémenter cette technique dans mon projet actuel.</p>
+            </div>
+            <button class="comment-reply"><i class="fas fa-reply"></i> Répondre</button>
+          </div>
+          
+          <div class="comment comment-reply">
+            <div class="comment-author">
+              <img src="./images/author.jpg" alt="Lassissou Zakari" class="comment-avatar">
+              <div class="comment-author-info">
+                <h4>Lassissou Zakari</h4>
+                <span class="comment-date">1 jour ago</span>
+                <span class="comment-badge">Auteur</span>
+              </div>
+            </div>
+            <div class="comment-content">
+              <p>Merci Jean ! N'hésite pas à me faire un retour sur ton implémentation. Les Web Workers peuvent vraiment faire des miracles pour les calculs intensifs.</p>
+            </div>
+            <button class="comment-reply"><i class="fas fa-reply"></i> Répondre</button>
+          </div>
+          
+          <div class="comment">
+            <div class="comment-author">
+              <img src="./images/user2.jpg" alt="Marie Martin" class="comment-avatar">
+              <div class="comment-author-info">
+                <h4>Marie Martin</h4>
+                <span class="comment-date">5 heures ago</span>
+              </div>
+            </div>
+            <div class="comment-content">
+              <p>As-tu des conseils spécifiques pour l'optimisation des performances sur les applications React ? J'ai essayé plusieurs de ces techniques mais j'aimerais en savoir plus sur React spécifiquement.</p>
+            </div>
+            <button class="comment-reply"><i class="fas fa-reply"></i> Répondre</button>
+          </div>
+        </div>
+        
+        <form class="comment-form">
+          <h3>Laisser un commentaire</h3>
+          <div class="form-group">
+            <input type="text" placeholder="Votre nom" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Votre email" required>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Votre commentaire" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Envoyer le commentaire</button>
+        </form>
+      </div>
+    </section>
+    
+    <section class="article-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Vous avez un projet en tête ?</h2>
+          <p>Contactez-moi pour discuter de comment je peux vous aider à le concrétiser</p>
+          <a href="index.html#contact" class="btn btn-primary btn-animate">
+            <span>Discutons-en</span>
+            <i class="fas fa-paper-plane"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ⚫ Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo">Lassissou Zakari<span></span></div>
+          <p>Création de solutions digitales sur mesure pour propulser votre business.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="navigation-service">
+          <div class="footer-col">
+            <h3>Navigation</h3>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="index.html#skills">Expertise</a></li>
+              <li><a href="projets.html">Réalisations</a></li>
+              <li><a href="a-propos.html">À Propos</a></li>
+              <li><a href="blog.html">Articles</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Développement Web</a></li>
+              <li><a href="#">Applications Mobile</a></li>
+              <li><a href="#">UX/UI Design</a></li>
+              <li><a href="#">Consulting</a></li>
+              <li><a href="#">Formation</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Newsletter</h3>
+          <p>Abonnez-vous pour recevoir mes dernières actualités.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Votre email" required>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i>.
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Lassissou Zakari. Tous droits réservés.</p>
+        <div class="legal-links">
+          <a href="#">Mentions légales</a>
+          <a href="#">Politique de confidentialité</a>
+          <a href="#">Conditions d'utilisation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/article.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À Propos | Développeur Full Stack & Mobile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/a_propos.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <!-- 🟠 Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Lassissou Zakari<span></span></a>
+      <nav class="nav-container">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="index.html#skills" class="nav-link">Expertise</a></li>
+          <li><a href="projets.html" class="nav-link">Réalisations</a></li>
+          <li><a href="blog.html" class="nav-link">Articles</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="cta-buttons">
+          <button id="dark-mode-toggle" class="btn-icon" aria-label="Mode sombre">
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="dropdown">
+            <button class="btn-download">
+              CV <i class="fas fa-download"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#" download="CV_Dev_FullStack.pdf">PDF Français</a>
+              <a href="#" download="CV_Dev_FullStack_EN.pdf">PDF English</a>
+              <a href="#" download="CV_Dev_FullStack.docx">Word Version</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🟡 Main About Content -->
+  <main class="about-page">
+    <section class="page-header">
+      <div class="container">
+        <div class="page-header-content">
+          <h1 class="animate__animated animate__fadeInDown">À <span>Propos</span></h1>
+          <p class="animate__animated animate__fadeInUp">Découvrez qui je suis et ce qui me passionne</p>
+          <div class="breadcrumb animate__animated animate__fadeInUp">
+            <a href="index.html">Accueil</a> / <span>À Propos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-intro">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image" data-aos="fade-right">
+            <div class="image-wrapper">
+              <img src="./images/ima2.avif" alt="Lassissou Zakari" loading="lazy">
+              <div class="image-border"></div>
+              <div class="image-dots"></div>
+            </div>
+          </div>
+          <div class="about-content" data-aos="fade-left">
+            <h2>Qui suis-je ?</h2>
+            <div class="section-divider"></div>
+            <p>Je suis Lassissou Zakari, un développeur Full Stack passionné par la création de solutions digitales innovantes. Avec plus de 5 ans d'expérience, j'ai eu l'opportunité de travailler sur divers projets allant des applications web complexes aux solutions mobiles performantes.</p>
+            <p>Ma philosophie repose sur trois principes fondamentaux : l'élégance du code, l'expérience utilisateur optimale et la performance technique. Je crois fermement que la technologie devrait simplifier la vie, pas la compliquer.</p>
+            
+            <div class="personal-info">
+              <div class="info-item">
+                <span class="info-label">Nom :</span>
+                <span class="info-value">Lassissou Zakari</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Email :</span>
+                <span class="info-value">lassissouzakari@gmail.com</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Téléphone :</span>
+                <span class="info-value">+229 01 90 16 14 42</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Localisation :</span>
+                <span class="info-value">Porto-Novo, Bénin</span>
+              </div>
+            </div>
+
+            <div class="about-buttons">
+              <a href="projets.html" class="btn btn-primary">
+                <span>Voir mes projets</span>
+                <i class="fas fa-briefcase"></i>
+              </a>
+              <a href="#" class="btn btn-secondary">
+                <span>Télécharger CV</span>
+                <i class="fas fa-download"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-skills">
+      <div class="container">
+        <div class="section-header">
+          <h2>Mes <span>Compétences</span></h2>
+          <p>Technologies que je maîtrise</p>
+        </div>
+        
+        <div class="skills-progress">
+          <!-- Compétence 1 -->
+          <div class="progress-item" data-aos="fade-up">
+            <div class="progress-header">
+              <h3>Développement Frontend</h3>
+              <span>95%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 95%; background: #4361ee;"></div>
+            </div>
+          </div>
+          
+          <!-- Compétence 2 -->
+          <div class="progress-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="progress-header">
+              <h3>Développement Backend</h3>
+              <span>85%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 85%; background: #3f37c9;"></div>
+            </div>
+          </div>
+          
+          <!-- Compétence 3 -->
+          <div class="progress-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="progress-header">
+              <h3>Applications Mobile</h3>
+              <span>90%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 90%; background: #4895ef;"></div>
+            </div>
+          </div>
+          
+          <!-- Compétence 4 -->
+          <div class="progress-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="progress-header">
+              <h3>UX/UI Design</h3>
+              <span>80%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 80%; background: #4cc9f0;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-timeline">
+      <div class="container">
+        <div class="section-header">
+          <h2>Mon <span>Parcours</span></h2>
+          <p>Expériences professionnelles et formations</p>
+        </div>
+        
+        <div class="timeline">
+          <!-- Étape 1 -->
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-date">2022 - Présent</div>
+            <div class="timeline-content">
+              <h3>Développeur Full Stack Senior</h3>
+              <h4>Tech Solutions Inc.</h4>
+              <p>Conception et développement d'applications web complexes avec React et Node.js. Encadrement d'une équipe de 5 développeurs.</p>
+            </div>
+          </div>
+          
+          <!-- Étape 2 -->
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-date">2020 - 2022</div>
+            <div class="timeline-content">
+              <h3>Développeur Mobile</h3>
+              <h4>Digital Creations</h4>
+              <p>Développement d'applications cross-platform avec Flutter. Intégration d'APIs REST et optimisation des performances.</p>
+            </div>
+          </div>
+          
+          <!-- Étape 3 -->
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-date">2018 - 2020</div>
+            <div class="timeline-content">
+              <h3>Développeur Frontend</h3>
+              <h4>Web Agency</h4>
+              <p>Création d'interfaces utilisateur responsive avec Vue.js. Collaboration avec les designers pour optimiser l'UX.</p>
+            </div>
+          </div>
+          
+          <!-- Étape 4 -->
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-date">2016 - 2018</div>
+            <div class="timeline-content">
+              <h3>Master en Informatique</h3>
+              <h4>Université d'Abomey-Calavi</h4>
+              <p>Spécialisation en architectures logicielles et systèmes distribués.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-funfacts">
+      <div class="container">
+        <div class="funfacts-grid">
+          <!-- Funfact 1 -->
+          <div class="funfact-item" data-aos="zoom-in">
+            <div class="funfact-icon">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <div class="funfact-content">
+              <h3 data-count="50">0</h3>
+              <p>Projets réalisés</p>
+            </div>
+          </div>
+          
+          <!-- Funfact 2 -->
+          <div class="funfact-item" data-aos="zoom-in" data-aos-delay="100">
+            <div class="funfact-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="funfact-content">
+              <h3 data-count="35">0</h3>
+              <p>Clients satisfaits</p>
+            </div>
+          </div>
+          
+          <!-- Funfact 3 -->
+          <div class="funfact-item" data-aos="zoom-in" data-aos-delay="200">
+            <div class="funfact-icon">
+              <i class="fas fa-coffee"></i>
+            </div>
+            <div class="funfact-content">
+              <h3 data-count="1000">0</h3>
+              <p>Tasses de café</p>
+            </div>
+          </div>
+          
+          <!-- Funfact 4 -->
+          <div class="funfact-item" data-aos="zoom-in" data-aos-delay="300">
+            <div class="funfact-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="funfact-content">
+              <h3 data-count="50000">0</h3>
+              <p>Lignes de code</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Prêt à concrétiser votre projet ?</h2>
+          <p>Contactez-moi pour discuter de vos besoins et voir comment je peux vous aider</p>
+          <a href="index.html#contact" class="btn btn-primary btn-animate">
+            <span>Discutons-en</span>
+            <i class="fas fa-paper-plane"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ⚫ Footer -->
+  <footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="logo">Lassissou Zakari<span></span></div>
+            <p>Création de solutions digitales sur mesure pour propulser votre business.</p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+  
+  
+         
+          <div class="navigation-service">
+         
+          <div class="footer-col">
+            <h3>Navigation</h3>
+            <ul>
+              <li><a href="#home">Accueil</a></li>
+              <li><a href="#skills">Expertise</a></li>
+              <li><a href="projets.html">Réalisations</a></li>
+              <li><a href="blog.html">Articles</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Développement Web</a></li>
+              <li><a href="#">Applications Mobile</a></li>
+              <li><a href="#">UX/UI Design</a></li>
+              <li><a href="#">Consulting</a></li>
+              <li><a href="#">Formation</a></li>
+            </ul>
+          </div>
+        </div>
+  
+          <div class="footer-col">
+            <h3>Newsletter</h3>
+            <p>Abonnez-vous pour recevoir mes dernières actualités.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Votre email" required>
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i>.
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Lassissou Zakari. Tous droits réservés.</p>
+          <div class="legal-links">
+            <a href="#">Mentions légales</a>
+            <a href="#">Politique de confidentialité</a>
+            <a href="#">Conditions d'utilisation</a>
+          </div>
+        </div>
+      </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/a_propos.js"></script>
+</body>
+</html>

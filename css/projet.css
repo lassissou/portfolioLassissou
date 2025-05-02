@@ -1,0 +1,107 @@
+
+  /* ================ */
+  /* PROJECTS SECTION */
+  /* ================ */
+  .projects-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .filter-btn {
+    padding: 8px 20px;
+    border-radius: 30px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--dark);
+  }
+  
+  .filter-btn.active {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+  }
+  
+  .filter-btn:not(.active):hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .project-card {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    aspect-ratio: 16/9;
+  }
+  
+  .project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+  }
+  
+  .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 25px;
+    opacity: 0;
+    transition: var(--transition);
+  }
+  
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+  
+  .project-card:hover .project-img {
+    transform: scale(1.1);
+  }
+  
+  .project-title {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    transform: translateY(20px);
+    transition: var(--transition);
+    transition-delay: 0.1s;
+  }
+  
+  .project-category {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    transform: translateY(20px);
+    transition: var(--transition);
+    transition-delay: 0.2s;
+  }
+  
+  .project-links {
+    display: flex;
+    gap: 15px;
+    transform: translateY(20px);
+    transition: var(--transition);
+    transition-delay: 0.3s;
+  }
+  
+  .project-card:hover .project-title,
+  .project-card:hover .project-category,
+  .project-card:hover .project-links {
+    transform: translateY(0);
+  }
+  

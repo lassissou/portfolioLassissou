@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lassissou Zakari</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/bannier.css">
+  <link rel="stylesheet" href="./css/blog.css">
+ 
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+ 
+</head>
+<body>
+  <!-- 🟠 Navbar Glassmorphisme -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo" data-aos="fade-right">Lassissou Zakari<span></span></div>
+      <nav class="nav-container">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link">Accueil</a></li>
+          <li><a href="#skills" class="nav-link">Expertise</a></li>
+          <li><a href="projets.html" class="nav-link">Réalisations</a></li>
+          <li><a href="a_propos.html" class="nav-link">À Propos</a></li>
+          <li><a href="blog.html" class="nav-link">Articles</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="cta-buttons">
+          <button id="dark-mode-toggle" class="btn-icon" aria-label="Mode sombre">
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="dropdown">
+            <button class="btn-download">
+              CV <i class="fas fa-download"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#" download="CV_Dev_FullStack.pdf">PDF Français</a>
+              <a href="#" download="CV_Dev_FullStack_EN.pdf">PDF English</a>
+              <a href="#" download="CV_Dev_FullStack.docx">Word Version</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🟡 Hero Section Parallax -->
+  <section id="home" class="hero">
+    <div class="particles-js" id="particles-js"></div>
+    <div class="container">
+      <div class="hero-content" data-aos="fade-up">
+        <h1>
+          <span class="text-gradient">Solutions Digitales</span><br>
+          <span class="typing-text"></span>
+        </h1>
+        <p class="subtitle">Je transforme vos idées en expériences interactives exceptionnelles</p>
+        <div class="hero-buttons">
+          <a href="projets.html" class="btn btn-primary btn-animate">
+            <span>Voir mes projets</span>
+            <i class="fas fa-arrow-down"></i>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <span>Discutons</span>
+            <i class="fas fa-paper-plane"></i>
+          </a>
+        </div>
+      </div>
+      <div class="hero-image" data-aos="fade-left">
+        <div class="floating-img">
+          <img src="images/ima2.avif" alt="Illustration développement" loading="lazy">
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+  <!-- 🔵 Skills Section Interactive -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Mon <span>Expertise</span></h2>
+        <p>Technologies que je maîtrise</p>
+      </div>
+      <div class="skills-container">
+        <div class="skill-categories" data-aos="fade-right">
+          <button class="category-btn active" data-category="all">
+            <i class="fas fa-layer-group"></i> Tout voir
+          </button>
+          <button class="category-btn" data-category="front">
+            <i class="fas fa-laptop-code"></i> Frontend
+          </button>
+          <button class="category-btn" data-category="back">
+            <i class="fas fa-server"></i> Backend
+          </button>
+          <button class="category-btn" data-category="mobile">
+            <i class="fas fa-mobile-alt"></i> Mobile
+          </button>
+        </div>
+        <div class="skills-grid" data-aos="fade-up"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🟢 Projects Gallery 3D -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Mes <span>Réalisations</span></h2>
+        <p>Projets récents</p>
+      </div>
+      <div class="projects-filter" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+      </div>
+      <div class="projects-grid"></div>
+      <div class="projects-cta" data-aos="fade-up">
+        <a href="./projets.html" class="btn btn-outline">
+          <span>Voir plus de projets</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🟣 Blog Cards Hover -->
+  <section id="blog" class="blog">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Mes <span>Articles</span></h2>
+        <p>Partages d'expérience</p>
+      </div>
+      <div class="blog-grid"></div>
+      <div class="blog-cta" data-aos="fade-up">
+        <a href="./blog.html" class="btn btn-primary">
+          <span>Voir le blog</span>
+          <i class="fas fa-book-open"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔴 Testimonials Carousel -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Témoignages <span>Clients</span></h2>
+        <p>Ce qu'ils disent de mon travail</p>
+      </div>
+      <div class="testimonial-carousel" data-aos="fade-up">
+        <div class="testimonial-track"></div>
+        <div class="carousel-nav">
+          <button class="carousel-prev"><i class="fas fa-chevron-left"><<</i></button>
+          <div class="carousel-dots"></div>
+          <button class="carousel-next"><i class="fas fa-chevron-right">>></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulaire d'avis -->
+  <div class="add-testimonial" data-aos="fade-up">
+    <h3><i class="fas fa-pen-alt"></i> Donnez votre avis</h3>
+    <form id="testimonial-form" class="testimonial-form">
+      <div class="form-row">
+        <div class="form-group">
+          <input type="text" id="client-name" placeholder="Votre nom*" required>
+        </div>
+        <div class="form-group">
+          <input type="text" id="client-role" placeholder="Votre poste/entreprise">
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea id="client-message" placeholder="Votre témoignage*..." required></textarea>
+      </div>
+      <div class="rating-container">
+        <p>Notez mon travail :</p>
+        <div class="star-rating">
+          <i class="far fa-star" data-rating="1"></i>
+          <i class="far fa-star" data-rating="2"></i>
+          <i class="far fa-star" data-rating="3"></i>
+          <i class="far fa-star" data-rating="4"></i>
+          <i class="far fa-star" data-rating="5"></i>
+        </div>
+        <input type="hidden" id="client-rating" value="0">
+      </div>
+      <button type="submit" class="btn btn-primary">
+        <span>Publier votre avis</span>
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </form>
+  </div>
+</div>
+</section>
+
+
+  <!-- 🟤 Contact Form -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info" data-aos="fade-right">
+          <h2>Travaillons <span>ensemble</span></h2>
+          <p>Disponible pour des missions freelance ou des collaborations à long terme</p>
+          <div class="info-items">
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h3>Email</h3>
+                <a href="mailto:lassissouzakari@gmail.com">lassissouzakari@gmail.com</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <h3>Téléphone</h3>
+                <a href="tel:+229 01 90 16 14 42">+229 01 90 16 14 42 78</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h3>Localisation</h3>
+                <span>Porto-Nove, Bénin</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="https://github.com/" class="social-icon"><i class="fab fa-github">.</i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in">.</i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i>.</a>
+            <a href="#" class="social-icon"><i class="fab fa-dribbble"></i>.</a>
+            <a href="#" class="social-icon"><i class="fab fa-codepen"></i>.</a>
+          </div>
+        </div>
+        <form class="contact-form" data-aos="fade-left" action="https://formsubmit.co/lassissouzakari@gmail.com" method="POST">
+          <div class="form-group">
+            <input type="text" placeholder="Votre nom" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Votre email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Sujet">
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Votre message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <span>Envoyer le message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⚫ Footer Complet -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo">Lassissou Zakari<span></span></div>
+          <p>Création de solutions digitales sur mesure pour propulser votre business.</p>
+          <div class="footer-social">
+            <a href="https://github.com/lassissou"><i class="fab fa-github"></i>.</a>
+            <a href="https://www.linkedin.com/in/missigb%C3%A8to-zakari-yaoo-lassissou-837b22354/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BZOGBNOx6R4SjzCh%2BW1%2F3pQ%3D%3D"><i class="fab fa-linkedin-in"></i>.</a>
+            <a href="#"><i class="fab fa-facebook"></i>.</a>
+            <a href="#"><i class="fab fa-instagram">.</i></a>
+            <a href="#"><i class="fab fa-youtube"></i>.</a>
+          </div>
+        </div>
+
+
+       
+        <div class="navigation-service">
+       
+        <div class="footer-col">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#skills">Expertise</a></li>
+            <li><a href="projets.html">Réalisations</a></li>
+            <li><a href="blog.html">Articles</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="#">Développement Web</a></li>
+            <li><a href="#">Applications Mobile</a></li>
+            <li><a href="#">UX/UI Design</a></li>
+            <li><a href="#">Consulting</a></li>
+            <li><a href="#">Formation</a></li>
+          </ul>
+        </div>
+      </div>
+
+        <div class="footer-col">
+          <h3>Newsletter</h3>
+          <p>Abonnez-vous pour recevoir mes dernières actualités.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Votre email" required>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i>.
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Lassissou Zakari. Tous droits réservés.</p>
+        <div class="legal-links">
+          <a href="#">Mentions légales</a>
+          <a href="#">Politique de confidentialité</a>
+          <a href="#">Conditions d'utilisation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>
