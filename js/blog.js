@@ -133,3 +133,4 @@ if (localStorage.getItem('darkMode') === 'enabled') {
     icon.classList.add('fa-sun');
   }
 }
+

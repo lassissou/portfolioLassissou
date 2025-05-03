@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <h3 class="project-title">${project.title}</h3>
             <p class="project-category">${project.category}</p>
             <div class="project-links">
-              <a href="#" class="btn btn-primary">Détails</a>
+              <a href="projet.html" class="btn btn-primary">Détails</a>
               <a href="#" class="btn btn-secondary">Demo</a>
             </div>
           </div>

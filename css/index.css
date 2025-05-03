@@ -542,6 +542,10 @@ section {
   line-height: 1.2;
   margin-bottom: 20px;
 }
+.hero-image{
+  width: 500px;
+  height: 500px;
+}
 
 .typing-text {
   display: inline-block;

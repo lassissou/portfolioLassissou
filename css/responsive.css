@@ -78,6 +78,7 @@
     .hamburger {
       display: flex;
       flex-direction: column;
+      color: black;
     }
   
     .hamburger.active span:nth-child(1) {
