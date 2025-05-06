@@ -1,4 +1,8 @@
 // Initialisation
+
+particlesJS.load("particles-js", "assets/particles.json", function() {
+  console.log("Particules chargées avec succès !");
+});
 document.addEventListener('DOMContentLoaded', function() {
     // Initialiser AOS (Animate On Scroll)
     AOS.init({

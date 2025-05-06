@@ -1,65 +1,105 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialize AOS animation library
+  // Initialize AOS animation library (plus doux)
   AOS.init({
-    duration: 800,
-    easing: 'ease-in-out',
+    duration: 400, // Réduit la durée
+    easing: 'ease-out', // Animation plus douce
     once: true,
-    offset: 100
+    offset: 50 // Déclenchement plus tôt
   });
 
-  // Category filtering
+  // Initialize theme
+  initTheme();
+
+  // Mobile menu toggle
+  const hamburger = document.querySelector('.hamburger');
+  if (hamburger) {
+    hamburger.addEventListener('click', toggleMobileMenu);
+  }
+
+  // Dark mode toggle
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+  }
+
+  // Category filtering (version améliorée)
   const categoryBtns = document.querySelectorAll('.category-btn');
   const blogCards = document.querySelectorAll('.blog-card');
   
+  // Ajout des transitions CSS en JS pour plus de contrôle
+  blogCards.forEach(card => {
+    card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+  });
+
   categoryBtns.forEach(btn => {
     btn.addEventListener('click', function() {
-      // Remove active class from all buttons
       categoryBtns.forEach(b => b.classList.remove('active'));
-      // Add active class to clicked button
       this.classList.add('active');
       
       const category = this.dataset.category;
       
-      // Filter blog cards
       blogCards.forEach(card => {
         if (category === 'all' || card.dataset.category === category) {
           card.style.display = 'flex';
-          card.style.opacity = '0';
-          setTimeout(() => {
+          // Utilisation de requestAnimationFrame pour une animation plus fluide
+          requestAnimationFrame(() => {
             card.style.opacity = '1';
-          }, 50);
+            card.style.transform = 'translatex(10)';
+          });
         } else {
-          card.style.display = 'none';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(0px)';
+          // Masquer après l'animation
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
         }
       });
     });
   });
 
-  // Search functionality
+  // Search functionality (optimisé)
   const searchInput = document.querySelector('.search-bar input');
   const searchBtn = document.querySelector('.search-bar button');
   
   function performSearch() {
-    const searchTerm = searchInput.value.toLowerCase();
+    const searchTerm = searchInput.value.trim().toLowerCase();
     
-    if (searchTerm.length < 2) return;
+    if (searchTerm.length < 2) {
+      // Réinitialiser l'affichage si recherche trop courte
+      blogCards.forEach(card => {
+        card.style.display = 'flex';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      });
+      return;
+    }
     
     blogCards.forEach(card => {
       const title = card.querySelector('h3').textContent.toLowerCase();
       const excerpt = card.querySelector('.blog-card-excerpt').textContent.toLowerCase();
       const category = card.querySelector('.blog-card-category').textContent.toLowerCase();
       
-      if (title.includes(searchTerm)) {
+      if (title.includes(searchTerm) || excerpt.includes(searchTerm) || category.includes(searchTerm)) {
         card.style.display = 'flex';
-      } else if (excerpt.includes(searchTerm)) {
-        card.style.display = 'flex';
-      } else if (category.includes(searchTerm)) {
-        card.style.display = 'flex';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
       } else {
-        card.style.display = 'none';
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(10px)';
+        setTimeout(() => {
+          card.style.display = 'none';
+        }, 300);
       }
     });
   }
+  
+  // Délai pour éviter les recherches trop fréquentes
+  let searchTimeout;
+  searchInput.addEventListener('input', function() {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(performSearch, 300);
+  });
   
   searchBtn.addEventListener('click', performSearch);
   searchInput.addEventListener('keyup', function(e) {
@@ -74,6 +114,8 @@ document.addEventListener('DOMContentLoaded', function() {
       if (activeCategory === 'all') {
         blogCards.forEach(card => {
           card.style.display = 'flex';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
         });
       }
     });
@@ -86,51 +128,107 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.addEventListener('click', function() {
       paginationBtns.forEach(b => b.classList.remove('active'));
       this.classList.add('active');
-      // In a real implementation, you would load the corresponding page here
     });
   });
 
-  // Dark mode toggle (shared with other pages)
-  const darkModeToggle = document.getElementById('dark-mode-toggle');
-  if (darkModeToggle) {
-    darkModeToggle.addEventListener('click', toggleDarkMode);
-  }
+  // Dropdown functionality for mobile (optimisé)
+  document.querySelectorAll('.dropdown > button').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      if (window.innerWidth <= 992) {
+        e.preventDefault();
+        e.stopPropagation();
+        const dropdown = this.parentElement;
+        dropdown.classList.toggle('active');
+        
+        document.querySelectorAll('.dropdown').forEach(d => {
+          if (d !== dropdown) d.classList.remove('active');
+        });
+      }
+    });
+  });
 
-  // Mobile menu toggle (shared with other pages)
-  const hamburger = document.querySelector('.hamburger');
-  if (hamburger) {
-    hamburger.addEventListener('click', toggleMobileMenu);
-  }
+  // Fermer les dropdowns en cliquant ailleurs
+  document.addEventListener('click', function(e) {
+    if (window.innerWidth <= 992 && !e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown').forEach(d => {
+        d.classList.remove('active');
+      });
+    }
+  });
 });
 
-// Shared functions
+// =====================
+// THEME FUNCTIONS
+// =====================
+
+function detectSystemTheme() {
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  updateThemeIcon(theme);
+}
+
+function initTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  const systemTheme = detectSystemTheme();
+  
+  applyTheme(savedTheme || systemTheme);
+  
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) {
+      applyTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+}
+
 function toggleDarkMode() {
-  document.body.classList.toggle('dark-mode');
-  const icon = this.querySelector('i');
-  if (document.body.classList.contains('dark-mode')) {
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
-    localStorage.setItem('darkMode', 'enabled');
-  } else {
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
-    localStorage.setItem('darkMode', 'disabled');
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  applyTheme(newTheme);
+}
+
+function updateThemeIcon(theme) {
+  const icon = document.querySelector('#dark-mode-toggle i');
+  if (icon) {
+    icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
   }
 }
+
+// =====================
+// MOBILE MENU FUNCTIONS
+// =====================
 
 function toggleMobileMenu() {
   const navContainer = document.querySelector('.nav-container');
-  this.classList.toggle('active');
+  const hamburger = document.querySelector('.hamburger');
+  
+  hamburger.classList.toggle('active');
   navContainer.classList.toggle('active');
-}
-
-// Check for saved dark mode preference
-if (localStorage.getItem('darkMode') === 'enabled') {
-  document.body.classList.add('dark-mode');
-  const icon = document.querySelector('#dark-mode-toggle i');
-  if (icon) {
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
+  
+  if (navContainer.classList.contains('active')) {
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+      dropdown.classList.remove('active');
+    });
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
   }
 }
 
+// Close mobile menu when clicking on a link (optimisé)
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    if (window.innerWidth <= 992) {
+      const navContainer = document.querySelector('.nav-container');
+      const hamburger = document.querySelector('.hamburger');
+      if (navContainer.classList.contains('active')) {
+        navContainer.classList.remove('active');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+  });
+});

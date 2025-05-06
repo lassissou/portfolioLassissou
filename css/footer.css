@@ -5,6 +5,8 @@
   .footer {
     background: rgba(13, 11, 105, 0.8);
     padding: 80px 0 0;
+    padding-bottom: auto;
+    overflow: hidden;
   }
    
   [data-theme="dark"] .footer{
