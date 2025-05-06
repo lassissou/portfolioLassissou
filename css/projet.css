@@ -1,17 +1,4 @@
-:root {
-  --primary: #4361ee; /* Couleur principale bleue */
-  --primary-dark: #3a56d4;
-  --dark-bg: #fcf2f2; /* Fond sombre */
-  --text-light: #ffffff; /* Texte clair */
-  --transition: all 0.3s ease;
-}
-
-[data-theme="light"] {
-  --dark-bg: #ffffff;
-  --text-light: #121212;
-}
-
-/* 🟢 Projects Section - Style Vivant (Version adaptée) */
+/* 🟢 Projects Section - Style Vivant */
 .projects {
   padding: 100px 0;
   position: relative;
@@ -25,7 +12,7 @@
   left: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(90deg, var(--primary), #e52e71, #00b4db);
+  background: linear-gradient(90deg, #94b5f1, #6360ee, #a8b4f8);
 }
 
 .container {
@@ -42,7 +29,7 @@
 .section-header h2 {
   font-size: 3rem;
   font-weight: 800;
-  color: var(--text-light);
+  color: white;
   margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -50,7 +37,7 @@
 
 .section-header h2 span {
   color: transparent;
-  background: linear-gradient(90deg, var(--primary), #e52e71);
+  background: linear-gradient(90deg, #7d8ff7, #6882f5);
   -webkit-background-clip: text;
   background-clip: text;
   position: relative;
@@ -73,10 +60,10 @@
 
 .filter-btn {
   padding: 12px 25px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(132, 100, 248, 0.952);
   border-radius: 50px;
   background: transparent;
-  color: var(--text-light);
+  color: white;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -92,13 +79,13 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(124, 152, 247, 0.623), transparent);
   transition: all 0.6s ease;
   z-index: -1;
 }
 
 .filter-btn:hover {
-  color: var(--text-light);
+  color: #fff;
   border-color: transparent;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -109,9 +96,9 @@
 }
 
 .filter-btn.active {
-  background: linear-gradient(45deg, var(--primary), #e52e71);
+  background: linear-gradient(45deg, #434ddd, #8f91f1);
   border-color: transparent;
-  box-shadow: 0 5px 15px rgba(229, 46, 113, 0.4);
+  box-shadow: 0 5px 15px rgba(149, 198, 245, 0.4);
   transform: scale(1.05);
 }
 
@@ -129,13 +116,13 @@
   overflow: hidden;
   transform-style: preserve-3d;
   transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 35px rgba(120, 106, 139, 0.3);
   height: 250px;
 }
 
 .project-card:hover {
-  transform: translateY(-10px) rotateX(5deg) rotateY(5deg) scale(1.03);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  transform: translateY(-10px) rotateX(0deg) rotateY(0deg) scale(1.05);
+  box-shadow: 0 25px 50px rgba(97, 83, 83, 0.4);
 }
 
 .project-img {
@@ -154,7 +141,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  background: linear-gradient(to top, rgba(204, 198, 198, 0.9), transparent);
   padding: 30px 20px;
   transform: translateY(100%);
   transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -165,7 +152,7 @@
 }
 
 .project-title {
-  color: var(--text-light);
+  color: white;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 5px;
@@ -173,7 +160,7 @@
 }
 
 .project-category {
-  color: var(--primary);
+  color: #e5c8f3;
   font-weight: 600;
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -198,25 +185,25 @@
 }
 
 .btn-primary {
-  background: linear-gradient(45deg, var(--primary), #e52e71);
-  color: var(--text-light);
+  background: linear-gradient(45deg, #002fff, #1358ee);
+  color: white;
   border: none;
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(229, 46, 113, 0.4);
+  box-shadow: 0 5px 15px rgba(147, 104, 226, 0.4);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--text-light);
-  border: 2px solid var(--text-light);
+  color: white;
+  border: 2px solid white;
 }
 
 .btn-secondary:hover {
-  background: var(--text-light);
-  color: var(--dark-bg);
+  background: white;
+  color: #0f0c29;
 }
 
 /* CTA */
@@ -227,8 +214,8 @@
 
 .btn-outline {
   padding: 12px 30px;
-  border: 2px solid var(--primary);
-  color: var(--primary);
+  border: 2px solid #5663d8;
+  color: #6743eb;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -248,7 +235,7 @@
 }
 
 .btn-outline:hover {
-  color: var(--text-light);
+  color: #0f0c29;
   border-color: transparent;
 }
 
@@ -263,7 +250,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, var(--primary), #e52e71);
+  background: linear-gradient(45deg, #008cff, #1689e7);
   transform: translateX(-100%);
   transition: all 0.4s ease;
   z-index: 1;
